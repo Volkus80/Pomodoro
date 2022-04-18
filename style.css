@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&family=Russo+One&display=swap');
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+:root {
+    --round_heigt:360px;
+    --color1: rgb(245,55,55);
+}
+
+body {
+    background: var(--color1);
+    width: 100vw;
+    height: 100vh;
+}
+.container {
+    margin:  auto;
+    padding: 20px 0 20px 20px;
+    display: flex;
+    justify-items:center;
+    border: 1px solid black;
+    height:inherit;
+    
+}
+/* ---Левая часть----- */
+.header {
+    font-family: 'Russo One', sans-serif;
+    font-size: calc(100vh/15);
+    display: flex;
+    
+}
+
+.title {
+    writing-mode:vertical-rl;
+    text-align: center;
+    transform: rotate(180deg);
+    
+}
+/* ------Основная часть----- */
+.main {
+    flex: 1.8 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.timeMan {
+    font-family:'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    margin-bottom: 20px;
+}
+.timeMan [href="#"] {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+
+.round {
+    height:var(--round_heigt);
+    max-width: var(--round_heigt);
+    position:relative;
+}
+.watchItem, .mark {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius:50%;
+}
+.watchItem::before, .mark::before {
+    content:'';
+    position: absolute;
+    top:0;
+    left:calc(50% - 1px);
+    width: 2px;
+    height: 15px;
+    background:white;    
+}
+.mark::before {
+    height:20px;
+    box-shadow: 0 0 2px 2px white;
+}
+.count {
+    display: flex;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    position:absolute;
+    justify-content:space-between;
+    width:100px;
+    left:calc(50% - 50px);
+    top: calc(100%/3);
+    
+}
+.button {
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    background: rgb(250, 249, 249);
+    box-shadow:inset 0 0 3px 3px rgb(211, 210, 210);
+    position:absolute;  
+    left:calc(50% - 50px);
+    top:calc(100% - 100%/3 - 25px);
+    cursor: pointer;
+}
+.button:active {
+    transform:scale(0.9);
+}
+.button .start::before {
+    content:'';
+    position: absolute;
+    height:0;
+    width: 0;
+    border-top: 25px transparent solid;
+    border-bottom: 25px transparent solid;
+    border-left:50px solid var(--color1);
+    left: calc(50% - 18px);
+    top: calc(50% - 25px);
+}
+
+.button .pause::before {
+    content:'';
+    position: absolute;
+    width: calc(50px*.333);
+    height: 50px;
+    border-left: solid var(--color1) calc(50px*.333);
+    border-right: solid var(--color1) calc(50px*.333);
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+}
+
+/* -----Правая часть----- */
+.aside {
+    flex: 1 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:center;
+}
+.setting {
+    z-index:3;
+    width: 10rem;
+    height: 3.3rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    background:rgba(182, 177, 177, 0.5);
+    box-shadow: 0 0 2px 2px white;
+    transition: 0.3s;
+    margin-bottom: 10px;    
+}
+.setting:hover {
+    transform:scale(1.1);
+    background:rgba(182, 177, 177, 0.25)
+}
+.setting_menu {
+    position:absolute;
+    opacity: 1;
+    height: 100vh;
+    width: 400px;
+    padding: 6rem .5rem 0 0;
+    border-radius: 10px;
+    box-shadow: -5px 5px 5px 5px rgba(172, 169, 169, .1);
+    margin-right: 5px;
+    top:0;
+    right:0;
+    bottom:0;
+    transition:0.3s ease-in-out;
+    transform: translateX(0%);
+}
+
+.setting_menu.hidden {
+    transform: translateX(110%);
+    display: none;
+}
+.table {
+    min-width: 400px;
+    user-select: none;
+    -webkit-user-select: none;
+    
+}
+td {
+    height: 30px;
+    font-family: 'Roboto', sans-serif;   
+}
+input {
+    height: inherit;
+    width: 80px;
+    border: solid white 1px;
+    outline: none;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    background:none;
+}
+td:last-child * {
+    margin-left: 15px;
+}
+.plus {
+    cursor:pointer;
+}
+.minus {
+    margin-right: 15px;
+    cursor: pointer;
+}

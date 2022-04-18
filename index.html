@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <meta name="author" content="Volkus">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header class="header item">
+            <h1 class="title">Помид<span>O</span>рка</h1>
+        </header>
+        <main class="main item">
+            <div class="timeMan"><a href="#" class="reset">Сбросить</a><a href="#" class="jump">Перейти</a></div>
+            <div class="round" id="round">
+                <div class="count">
+                    <p class="minutes">00</p>
+                    <span class="divisor">:</span>
+                    <p class="seconds">00</p>
+                </div>
+                <div class="button">
+                    <span class="start"></span>
+                </div>
+                <span class="mark"></span>
+            </div>
+        
+        </main>
+        <aside class="aside item">
+            <button class="setting">Настройка</button>
+            <div class="setting_menu hidden">
+               
+                    <table class="table">
+                        <tr class="work">
+                            <td class="text">Сколько работаем?</td>
+                            <td class="work_time"><span class="plus">+</span><input type="text" disabled value="25" maxlength="2" data-min="5" data-max="55"><span class="minus">-</span>мин</td>
+                        </tr>
+                        <tr class="rest1">
+                            <td class="text">Перерывчик</td>
+                            <td class="rest1_time"><span class="plus">+</span><input type="text" disabled value="5" maxlength="2" data-min="2" data-max="10"><span class="minus">-</span>мин</td>
+                        </tr>
+                        <tr class="rest2">
+                            <td class="text">Большой перерыв</td>
+                            <td class="rest2_time"><span class="plus">+</span><input type="text" disabled value="20" maxlength="2" data-min="15" data-max="45"><span class="minus">-</span>мин</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr class="rest_quantity">
+                            <td class="text" title="Частота больших перерывов">Помидорок на ветке</td>
+                            <td class="work_time"><span class="plus">+</span><input type="text" disabled value="4" maxlength="2" data-min="4" data-max="8"><span class="minus">-</span>мин</td>
+                        </tr>
+                        <tr class="work_quantity">
+                            <td class="text" title="Количество рабочих периодов">Помидорок на кусте</td>
+                            <td class="work_time"><span class="plus">+</span><input type="text" disabled value="12" maxlength="2" data-min="1" data-max="12"><span class="minus">-</span>мин</td>
+                        </tr>
+                    
+                    </table>
+                
+            </div>
+        </aside>
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
